@@ -11,20 +11,20 @@ import { ToastContainer, toast } from "react-toastify";
 import { useNavigate,NavLink  } from 'react-router-dom';
 export default function Login() {
   const toastOptions = {
-    position: "bottom-right",
+    position: "relative-left",
     autoClose: 5000,
     pauseOnHover: true,
     draggable: true,
-    theme: "dark",
+    theme: "",
   };
 
 const validateForm = () => {
-  const { username, password } = values;
-  if (username === "" ) {
-    toast.error("Email and Password is required.", toastOptions);
+  const { email, password } = values;
+  if (email === ""  ) {
+    toast.error("Email et mot de passe obligatoire.", toastOptions);
     return false;
   } else if (password === "" ) {
-    toast.error("Email and Password is required.", toastOptions);
+    toast.error("mot de passe obligatoire.", toastOptions);
     return false;
   }
   return true;
@@ -107,9 +107,6 @@ const handleSubmit = async (event) => {
               type="password"
               name="password"
               autoComplete="off"
-        
-           
-           
               onChange={(e) => handleChange(e)}
               
             />
