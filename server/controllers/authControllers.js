@@ -13,19 +13,19 @@ const handleErrors = (err) => {
 
   console.log(err);
   if (err.message === "incorrect email") {
-    errors.email = "That email is not registered";
+    errors.email = "Email n'est pas enregistré";
   }
 
   if (err.message === "incorrect password") {
-    errors.password = "That password is incorrect";
+    errors.password = "Mot de passe incorrect";
   }
 
   if (err.code === 11000) {
-    errors.email = "Email is already registered";
+    errors.email = "Email est déjà enregistré";
     return errors;
   }
 
-  if (err.message.includes("Users validation failed")) {
+  if (err.message.includes("Users validation echoué")) {
     Object.values(err.errors).forEach(({ properties }) => {
       errors[properties.path] = properties.message;
     });

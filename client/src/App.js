@@ -6,13 +6,16 @@ import Dashboard from "./pages/dashboard/Dashboard";
 import Cards from "./pages/Cards";
 import "react-toastify/dist/ReactToastify.css";
 
+
+
 export default function App() {
+
   return (
     <BrowserRouter>
       <Routes>
+      <Route exact path="/" element={<Login />} />
         <Route exact path="/register" element={<Register />} />
-        <Route exact path="/login" element={<Login />} />
-        <Route exact path="/cards" element={<Cards />} />
+        <Route exact path="/cards" element={<Dashboard />} />
       </Routes>
     </BrowserRouter>
   );

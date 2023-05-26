@@ -11,7 +11,7 @@ import { ToastContainer, toast } from "react-toastify";
 import { useNavigate,NavLink  } from 'react-router-dom';
 export default function Login() {
   const toastOptions = {
-    position: "bottom-right",
+    position: "bottom-left",
     autoClose: 5000,
     pauseOnHover: true,
     draggable: true,
@@ -19,12 +19,12 @@ export default function Login() {
   };
 
 const validateForm = () => {
-  const { username, password } = values;
-  if (username === "" ) {
-    toast.error("Email and Password is required.", toastOptions);
+  const { email, password } = values;
+  if (email === ""  ) {
+    toast.error("Email et mot de passe obligatoire.", toastOptions);
     return false;
   } else if (password === "" ) {
-    toast.error("Email and Password is required.", toastOptions);
+    toast.error("mot de passe obligatoire.", toastOptions);
     return false;
   }
   return true;
@@ -107,9 +107,6 @@ const handleSubmit = async (event) => {
               type="password"
               name="password"
               autoComplete="off"
-        
-           
-           
               onChange={(e) => handleChange(e)}
               
             />
@@ -120,9 +117,9 @@ const handleSubmit = async (event) => {
             Se connecter
 
           </button>
-          <div className="text-center py-4">
+          {/* <div className="text-center py-4">
                 <Link className="text-blue-500"  to="/reload"> <span className=' font-sans text-white'>Mot de passe oublié ? </span></Link>
-              </div>
+              </div> */}
         </form>
       </div>
 
