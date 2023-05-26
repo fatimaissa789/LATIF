@@ -11,11 +11,11 @@ import { ToastContainer, toast } from "react-toastify";
 import { useNavigate,NavLink  } from 'react-router-dom';
 export default function Login() {
   const toastOptions = {
-    position: "relative-left",
+    position: "bottom-left",
     autoClose: 5000,
     pauseOnHover: true,
     draggable: true,
-    theme: "",
+    theme: "dark",
   };
 
 const validateForm = () => {
@@ -117,9 +117,9 @@ const handleSubmit = async (event) => {
             Se connecter
 
           </button>
-          <div className="text-center py-4">
+          {/* <div className="text-center py-4">
                 <Link className="text-blue-500"  to="/reload"> <span className=' font-sans text-white'>Mot de passe oublié ? </span></Link>
-              </div>
+              </div> */}
         </form>
       </div>
 

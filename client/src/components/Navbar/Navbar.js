@@ -7,9 +7,6 @@ import { useCookies } from "react-cookie";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import { BiExit } from "react-icons/bi";
-let userImg =
-  "https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80";
- 
 
 export default function Navbar() { 
   const navigate = useNavigate();
@@ -27,13 +24,15 @@ useEffect(() => {
           withCredentials: true,
         }
       );
+      console.log(data.status);
       if (!data.status) {
         removeCookie("jwt");
         navigate("/");
-      } else
-        toast(`Hi ${data.user} 🦄`, {
+      } else {
+        toast(`BY ${data.user} 🦄`, {
           theme: "dark",
         });
+      }
     }
   };
   verifyUser();
